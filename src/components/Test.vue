@@ -10,6 +10,11 @@
 // import {Addlog} from '@/assets/js/add.js'
 export default {
     name: "test",
+    props: {
+      foo:{
+        type: String
+      }
+    },
     data() {
         return {
             count: 0,
@@ -17,7 +22,11 @@ export default {
             msg1: "1111111"
         };
     },
-    mounted() {},
+    mounted() {
+      console.log(this.$data,'data');
+      console.log(this.$props,'props');
+      console.log(this.$options,'options')
+    },
     filters: {
         msg2(value) {
           if(value == '') {
